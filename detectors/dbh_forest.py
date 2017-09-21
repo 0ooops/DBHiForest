@@ -46,7 +46,7 @@ class DBHForest:
             # dbh_instances.append(cp.deepcopy(self._dbh_family.get_array()))  #family should be 50 groups of (X1,X2,t1,t2)
 
         # Generate hash functions in one time
-        transformed_data = sampled_data[0]
+        transformed_data = sampled_data[0] #function -> get 1 sample for generating (X1, X2, t1, t2) combinations
         if self._sampler._bagging != None:
             transformed_data = self._sampler._bagging_instances[0].get_transformed_data(transformed_data)
         self._dbh_family.fit(transformed_data)
